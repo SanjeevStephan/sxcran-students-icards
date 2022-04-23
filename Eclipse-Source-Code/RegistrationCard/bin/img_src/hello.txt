@@ -1,0 +1,32 @@
+		
+		try {
+        	
+			File lstFiles = new File(docDir);
+			String files[] = lstFiles.list();
+		
+			
+			for(int i = 0;i<files.length;i++)
+			{
+		
+ //				JOptionPane.showMessageDialog(null, "Hello stephan");
+				
+				String selectedFile = docDir+files[i];
+
+			//	String listhere[]= {};					
+				FileInputStream fStream = new FileInputStream(selectedFile);
+				DataInputStream dStream = new DataInputStream(fStream);
+				BufferedReader br = new BufferedReader(new InputStreamReader(dStream));
+				try {strLine=br.readLine();} catch (IOException e1) {e1.printStackTrace();}
+				String splitme = "%";
+				splitText = strLine.split(splitme);
+               // System.out.println(splitText[i]);
+              //  JOptionPane.showMessageDialog(null,strLine);
+				
+			
+			}
+
+
+			//JOptionPane.showMessageDialog(null, selectedFile);
+			
+			
+		} catch (FileNotFoundException e) {e.printStackTrace();} 
